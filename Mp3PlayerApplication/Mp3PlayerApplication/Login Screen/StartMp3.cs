@@ -105,7 +105,6 @@ namespace Mp3.Login_Screen
                 mp3.Text = userComboBox.SelectedItem.ToString() + "'s Mp3 Player";
                 mp3.ShowDialog();
                 this.Dispose();
-
             }
         }
     }

@@ -156,7 +156,7 @@
             this.playlistList.Name = "playlistList";
             this.playlistList.Size = new System.Drawing.Size(222, 420);
             this.playlistList.TabIndex = 14;
-            this.playlistList.DoubleClick += new System.EventHandler(this.playlistList_DoubleClick);
+            this.playlistList.Click += new System.EventHandler(this.playlistList_Click);
             // 
             // volumeBar
             // 
@@ -413,7 +413,7 @@
             this.addGroupToolStripMenuItem.Name = "addGroupToolStripMenuItem";
             this.addGroupToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + G";
             this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
-            this.addGroupToolStripMenuItem.Text = "Add Group";
+            this.addGroupToolStripMenuItem.Text = "Add Playlist Group";
             this.addGroupToolStripMenuItem.Click += new System.EventHandler(this.addGroupToolStripMenuItem_Click);
             // 
             // addPlaylistToolStripMenuItem
@@ -470,7 +470,7 @@
             this.nameAscending,
             this.nameDescending});
             this.songNameToolStripMenuItem.Name = "songNameToolStripMenuItem";
-            this.songNameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.songNameToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.songNameToolStripMenuItem.Text = "Song Name";
             // 
             // nameAscending
@@ -495,7 +495,7 @@
             this.lengthAscending,
             this.lengthDescending});
             this.lengthToolStripMenuItem.Name = "lengthToolStripMenuItem";
-            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.lengthToolStripMenuItem.Text = "Length";
             // 
             // lengthAscending
@@ -520,7 +520,7 @@
             this.artistAscending,
             this.artistDescending});
             this.artistToolStripMenuItem.Name = "artistToolStripMenuItem";
-            this.artistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.artistToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.artistToolStripMenuItem.Text = "Artist";
             // 
             // artistAscending
@@ -546,7 +546,7 @@
             this.albumDescending});
             this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
             this.albumToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.albumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.albumToolStripMenuItem.Text = "Album";
             // 
             // albumAscending
@@ -571,7 +571,7 @@
             this.yearAscending,
             this.yearDescending});
             this.yearToolStripMenuItem.Name = "yearToolStripMenuItem";
-            this.yearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yearToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.yearToolStripMenuItem.Text = "Year";
             // 
             // yearAscending
@@ -597,7 +597,7 @@
             this.genreDescending});
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
             this.genreToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.genreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.genreToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.genreToolStripMenuItem.Text = "Genre";
             // 
             // genreAscending
@@ -622,7 +622,7 @@
             this.playsAscending,
             this.playsDescending});
             this.playsToolStripMenuItem.Name = "playsToolStripMenuItem";
-            this.playsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.playsToolStripMenuItem.Text = "Plays";
             // 
             // playsAscending
@@ -647,7 +647,7 @@
             this.ratingAscending,
             this.ratingDescending});
             this.ratingToolStripMenuItem.Name = "ratingToolStripMenuItem";
-            this.ratingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ratingToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.ratingToolStripMenuItem.Text = "Rating";
             // 
             // ratingAscending
@@ -837,6 +837,7 @@
             this.Column9,
             this.Column10,
             this.Column11});
+            this.songList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.songList.Location = new System.Drawing.Point(244, 137);
             this.songList.Name = "songList";
             this.songList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -844,6 +845,7 @@
             this.songList.TabIndex = 43;
             this.songList.SelectionChanged += new System.EventHandler(this.songList_SelectionChanged);
             this.songList.DoubleClick += new System.EventHandler(this.songList_DoubleClick);
+            this.songList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Key_KeyDown);
             // 
             // Column2
             // 
@@ -943,8 +945,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mp3 Player";
             this.Load += new System.EventHandler(this.startMp3_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Key_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Mp3PlayerForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

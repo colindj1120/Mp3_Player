@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mp3
+namespace Mp3.Details
 {
-    class SongDetails
+    public class SongDetails
     {
         public string SongName { get; set; }
         public string Artist { get; set; }
@@ -51,6 +51,17 @@ namespace Mp3
             Path = path;
             Track = track;
             Year = year;
+        }
+
+        public bool equals(SongDetails song)
+        {
+            if(SongName == song.SongName && Artist == song.Artist && Album == song.Album && 
+                Genre == song.Genre && Length == song.Length && Rating == song.Rating && 
+                Plays == song.Plays && Path == song.Path && Track == song.Track && Year == song.Year)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

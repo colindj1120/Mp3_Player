@@ -56,6 +56,17 @@
     <Compile Include="Comparers\PositionComparer.cs" />
     <Compile Include="Comparers\NameComparer.cs" />
     <Compile Include="Comparers\PlaysComparer.cs" />
+    <Compile Include="Containers\Containers.cs" />
+    <Compile Include="Functions\Add.cs" />
+    <Compile Include="Functions\Contains.cs" />
+    <Compile Include="Functions\Create.cs" />
+    <Compile Include="Functions\Delete.cs" />
+    <Compile Include="Functions\GuiControl.cs" />
+    <Compile Include="Functions\Load_Save.cs" />
+    <Compile Include="Functions\Miscellaneous.cs" />
+    <Compile Include="Functions\Search.cs" />
+    <Compile Include="Functions\SongControl.cs" />
+    <Compile Include="Functions\SortItems.cs" />
     <Compile Include="Login Screen\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +93,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SongDetails.cs" />
+    <Compile Include="Details\SongDetails.cs" />
     <Compile Include="Login Screen\StartMp3.cs">
       <SubType>Form</SubType>
     </Compile>
