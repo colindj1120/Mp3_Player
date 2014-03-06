@@ -81,7 +81,6 @@ namespace Mp3.Functions
                 writer.Formatting = Formatting.Indented;
                 container.xmlFile.xml.Save(writer);
             }
-            container.booleans.columnWidthChanged = false;
             container.labels.playlistLabel.Text = "Master Library";
             container.gui.songList.Sort(new NameComparer(SortOrder.Ascending));
             container.gui.sortOptions.nameAscending.Checked = true;

@@ -12,8 +12,6 @@ namespace Mp3.Containers
 {
     public class Booleans
     {
-        public bool columnWidthChanged = false;
-        public bool cameFromDouble = false;
         public bool isPlaying = false;
         public bool isPaused = false;
     }

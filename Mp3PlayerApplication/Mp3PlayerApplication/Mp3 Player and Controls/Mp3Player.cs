@@ -90,6 +90,8 @@ namespace Mp3.Mp3_Player_and_Controls
             this.KeyPreview = true;
             Load_Save.loadUser(container);
             loadFunctionMap();
+            container.gui.songList.CurrentCell = container.gui.songList[1, 0];
+            container.gui.songList.SelectedRows[0].Selected = false;
         }
 
         /*******************  Play, Stop, Previous, Next Buttons ************************************/
@@ -370,24 +372,6 @@ namespace Mp3.Mp3_Player_and_Controls
             }
         }
 
-        private void songList_DoubleClick(object sender, EventArgs e)
-        {
-            if (!container.booleans.columnWidthChanged)
-            {
-                container.booleans.cameFromDouble = true;
-                playButton_Click(sender, e);
-            }
-            else
-            {
-                container.booleans.columnWidthChanged = false;
-            }
-        }
-
-        private void songList_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {
-            container.booleans.columnWidthChanged = true;
-        }
-
         private void volumeBar_Scroll(object sender, EventArgs e)
         {
             container.player.wmplayer.settings.volume = volumeBar.Value * 10;
@@ -515,6 +499,20 @@ namespace Mp3.Mp3_Player_and_Controls
             fpt = deletePlaylistToolStripMenuItem_Click;
             triKeyValues = new Tuple<Keys, Keys, Keys>(Keys.Control, Keys.Shift, Keys.D);
             functionTriMap.Add(triKeyValues, fpt);
+        }
+
+        private void songList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            SortItems.columnSortClick(container, e);
+        }
+
+        private void songList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+            {
+                return;
+            }
+            playButton_Click(sender, e);
         }
     }
 }

@@ -14,6 +14,10 @@ namespace Mp3.Functions
     {
         public static void setupPlay(Mp3_Container container)
         {
+            if(container.gui.songList.SelectedRows.Count == 0)
+            {
+                return;
+            }
             if (container.songlists.nowPlaying != null && container.songlists.nowPlaying.equals(Create.createSelectedSong(container)))
             {
                 SongControl.play_pause(container);
@@ -25,11 +29,7 @@ namespace Mp3.Functions
                 container.trackers.nowPlayingRow = container.gui.songList.SelectedRows[0].Index;
             }
 
-            if (container.booleans.cameFromDouble)
-            {
-                container.booleans.cameFromDouble = false;
-            }
-            else if (container.gui.shuffle.Checked)
+            if (container.gui.shuffle.Checked)
             {
                 SongControl.shuffleSong(container);
             }
