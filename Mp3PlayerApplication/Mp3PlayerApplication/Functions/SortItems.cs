@@ -3,12 +3,137 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Mp3.Containers;
 
 namespace Mp3.Functions
 {
     class SortItems
     {
+        public static void columnSortClick(Mp3_Container container, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                if (!container.gui.sortOptions.nameAscending.Checked && !container.gui.sortOptions.nameDescending.Checked)
+                {
+                    container.gui.sortOptions.nameDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.nameAscending.Checked)
+                {
+                    SortItems.nameDescending(container);
+                }
+                else
+                {
+                    SortItems.nameAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                if (!container.gui.sortOptions.lengthAscending.Checked && !container.gui.sortOptions.lengthDescending.Checked)
+                {
+                    container.gui.sortOptions.lengthDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.lengthAscending.Checked)
+                {
+                    SortItems.lengthDescending(container);
+                }
+                else
+                {
+                    SortItems.lengthAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                if (!container.gui.sortOptions.artistAscending.Checked && !container.gui.sortOptions.artistDescending.Checked)
+                {
+                    container.gui.sortOptions.artistDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.artistAscending.Checked)
+                {
+                    SortItems.artistDescending(container);
+                }
+                else
+                {
+                    SortItems.artistAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                if (!container.gui.sortOptions.albumAscending.Checked && !container.gui.sortOptions.albumDescending.Checked)
+                {
+                    container.gui.sortOptions.albumDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.albumAscending.Checked)
+                {
+                    SortItems.albumDescending(container);
+                }
+                else
+                {
+                    SortItems.albumAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                if (!container.gui.sortOptions.yearAscending.Checked && !container.gui.sortOptions.yearDescending.Checked)
+                {
+                    container.gui.sortOptions.yearDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.yearAscending.Checked)
+                {
+                    SortItems.yearDescending(container);
+                }
+                else
+                {
+                    SortItems.yearAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 7)
+            {
+                if (!container.gui.sortOptions.genreAscending.Checked && !container.gui.sortOptions.genreDescending.Checked)
+                {
+                    container.gui.sortOptions.genreDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.genreAscending.Checked)
+                {
+                    SortItems.genreDescending(container);
+                }
+                else
+                {
+                    SortItems.genreAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 8)
+            {
+                if (!container.gui.sortOptions.playsAscending.Checked && !container.gui.sortOptions.playsDescending.Checked)
+                {
+                    container.gui.sortOptions.playsDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.playsAscending.Checked)
+                {
+                    SortItems.playsDescending(container);
+                }
+                else
+                {
+                    SortItems.playsAscending(container);
+                }
+            }
+            else if (e.ColumnIndex == 9)
+            {
+                if (!container.gui.sortOptions.ratingAscending.Checked && !container.gui.sortOptions.ratingDescending.Checked)
+                {
+                    container.gui.sortOptions.ratingDescending.Checked = true;
+                }
+                if (container.gui.sortOptions.ratingAscending.Checked)
+                {
+                    SortItems.ratingDescending(container);
+                }
+                else
+                {
+                    SortItems.ratingAscending(container);
+                }
+            }
+        }
+
         public static void nameAscending(Mp3_Container container)
         {
             container.gui.sortOptions.nameAscending.Checked = true;
